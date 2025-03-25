@@ -1,56 +1,58 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTruck, faStore, faCog } from "@fortawesome/free-solid-svg-icons";
-import "./WhyAreWeUnique.css"; // Import CSS
+import { faUtensils, faHeart, faClock } from "@fortawesome/free-solid-svg-icons";
+import "./WhyAreWeUnique.css";
 
 // Import gambar (pastikan path sesuai dengan struktur proyek)
 import googlePlay from "../assets/google-play.png";
 import appStore from "../assets/app-store.png";
 import phoneMockup from "../assets/phone-mockup.png";
-import burger from "../assets/burger.png";
 
 const WhyAreWeUnique = () => {
   return (
-    <section id="Download" className="unique-section fade-in">
-      {/* Bagian Fitur Unik */}
-      <p className="small-heading">LOREM IPSUM</p>
-      <h2 className="section-title">Why Are We Unique?</h2>
+    <section id="Download" className="unique-section">
+      {/* Header */}
+      <div className="section-header">
+        <h2 className="section-title">Kenapa Memilih AutoChef?</h2>
+        <p className="section-subtitle">
+          Rasakan pengalaman memasak yang lebih mudah dengan rekomendasi resep otomatis, tambah favorite, dan fitur memasak pintar.
+        </p>
+      </div>
 
+      {/* Unique Features */}
       <div className="unique-features">
-        <div className="feature hover-effect">
-          <FontAwesomeIcon icon={faTruck} className="icon" />
-          <h3>We've Upped The Game.</h3>
-          <p>We carry a variety of products through our unique vendors that you can't typically get delivered.</p>
+        <div className="feature">
+          <FontAwesomeIcon icon={faUtensils} className="icon" />
+          <h3>Rekomendasi Resep Otomatis</h3>
+          <p>Temukan resep terbaik berdasarkan bahan yang Anda miliki dan preferensi rasa Anda.</p>
         </div>
-        <div className="feature hover-effect">
-          <FontAwesomeIcon icon={faStore} className="icon" />
-          <h3>Order From Our Virtual Mall</h3>
-          <p>Order from a large variety of local stores you like and trust for years. You can't typically get delivered.</p>
+        <div className="feature">
+          <FontAwesomeIcon icon={faHeart} className="icon" />
+          <h3>Tambahkan ke Favorit</h3>
+          <p>Simpan resep favorit Anda agar mudah ditemukan dan dimasak kembali kapan saja.</p>
         </div>
-        <div className="feature hover-effect">
-          <FontAwesomeIcon icon={faCog} className="icon" />
-          <h3>Easy Access To Local Services</h3>
-          <p>Easy access to local services such as dry cleaning. We can pick it up and drop it off to make your life easier.</p>
+
+        <div className="feature">
+          <FontAwesomeIcon icon={faClock} className="icon" />
+          <h3>Fitur Memasak Pintar</h3>
+          <p>Dapatkan panduan langkah demi langkah, timer otomatis, dan tips memasak dari chef profesional.</p>
         </div>
       </div>
 
-      {/* Bagian Promosi Aplikasi */}
+      {/* Download Section */}
       <div className="promo-section">
         <div className="promo-text">
-          <h2>The Innovative Way To Shop</h2>
-          <p>Join us to enjoy a new and improved way of shopping through our virtual mall experience.</p>
+          <h2>Memasak Jadi Lebih Mudah & Praktis</h2>
+          <p>Jutaan pengguna sudah menikmati pengalaman memasak yang lebih cerdas dengan AutoChef.</p>
           <div className="app-buttons">
             <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-              <img src={googlePlay} alt="Google Play" className="store-button scale-hover" />
+              <img src={googlePlay} alt="Google Play" className="store-button" />
             </a>
-            <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-              <img src={appStore} alt="App Store" className="store-button scale-hover" />
-            </a>
+            
           </div>
         </div>
         <div className="promo-image">
           <img src={phoneMockup} alt="App Preview" className="phone-mockup" />
-          <img src={burger} alt="Burger" className="floating-burger" />
         </div>
       </div>
     </section>

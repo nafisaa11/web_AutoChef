@@ -1,67 +1,83 @@
+/* Unique Section Styling */
 .unique-section {
   text-align: center;
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-  animation: fadeIn 1.5s ease-in-out;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #ff6243, #e63e30);
+  color: white; /* Warna teks utama */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Section Header */
+.section-header {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
 }
 
 .small-heading {
-  color: #ff6600;
+  color: #ffe4b5; /* Warna kuning pastel agar kontras */
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  color: #333;
+  color: white; /* Warna putih agar lebih jelas */
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #f8d7da; /* Abu-abu muda agar tidak terlalu mencolok */
   margin-bottom: 2rem;
 }
 
+/* Features Section */
 .unique-features {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .feature {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 320px;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .feature:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .icon {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #ff6600;
   margin-bottom: 1rem;
 }
 
+.feature h3 {
+  color: #333; /* Warna teks judul fitur agar lebih kontras dengan background putih */
+}
+
+.feature p {
+  color: #555; /* Warna teks deskripsi agar mudah dibaca */
+}
+
+/* Promo Section */
 .promo-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: left;
 }
@@ -71,14 +87,15 @@
 }
 
 .promo-text h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  color: white; /* Warna putih agar kontras */
 }
 
 .promo-text p {
-  color: #666;
-  margin-bottom: 1rem;
+  color: #f8d7da; /* Warna abu-abu terang agar mudah dibaca */
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .app-buttons {
@@ -87,8 +104,7 @@
 }
 
 .store-button {
-  width: 150px;
-  cursor: pointer;
+  width: 160px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -96,33 +112,26 @@
   transform: scale(1.1);
 }
 
+/* Phone Mockup */
 .promo-image {
-  position: relative;
   width: 50%;
   display: flex;
   justify-content: center;
 }
 
 .phone-mockup {
-  width: 300px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 340px;
   animation: fadeIn 1.5s ease-in-out;
 }
 
-.floating-burger {
-  position: absolute;
-  bottom: -20px;
-  right: -40px;
-  width: 120px;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
-  animation: floatAnimation 2s infinite alternate ease-in-out;
-}
-
-@keyframes floatAnimation {
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: translateY(-10px);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
