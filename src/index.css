@@ -103,6 +103,12 @@ ul {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+  .header {
+    display: none; /* Navbar akan tersembunyi di mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
   .container {
     padding: 0 20px;
   }
