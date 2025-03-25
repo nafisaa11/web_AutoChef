@@ -77,9 +77,6 @@
 
 .promo-text {
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Pastikan konten tersusun dengan baik */
 }
 
 .promo-text h2 {
@@ -94,24 +91,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Perbaikan tombol */
-.app-buttons {
-  display: flex;
-  justify-content: start; /* Biarkan tombol tetap sejajar kiri */
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem; /* Tambahkan margin agar tombol turun */
-}
-
-.store-button {
-  width: 160px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.store-button:hover {
-  transform: scale(1.1);
-}
-
 /* Phone Mockup */
 .promo-image {
   width: 50%;
@@ -122,6 +101,22 @@
 .phone-mockup {
   width: 340px;
   animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Tombol Google Play */
+.app-download {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem; /* Tambahkan jarak dari elemen sebelumnya */
+}
+
+.store-button {
+  width: 180px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.store-button:hover {
+  transform: scale(1.1);
 }
 
 /* Animations */
@@ -158,7 +153,40 @@
     max-width: 300px;
   }
 
-  .app-buttons {
-    justify-content: center; /* Pastikan tombol ada di tengah pada mobile */
+  .app-download {
+    margin-top: 2rem;
+  }
+}
+
+/* Pastikan fitur tetap dalam 3 kolom */
+.unique-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Selalu 3 kolom */
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Container utama tetap grid */
+.unique-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom */
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Perbaikan tampilan mobile */
+@media (max-width: 768px) {
+  .unique-features {
+    display: flex; /* Ubah jadi flexbox */
+    flex-wrap: wrap; /* Biar nggak bertumpuk */
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .feature {
+    width: 100%; /* Biar card tidak bertumpuk */
+    max-width: 320px; /* Ukuran maksimal agar tidak terlalu besar */
   }
 }

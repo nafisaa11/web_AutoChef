@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils, faHeart, faClock } from "@fortawesome/free-solid-svg-icons";
 import "./WhyAreWeUnique.css";
 
-// Import gambar (pastikan path sesuai dengan struktur proyek)
+// Import gambar
 import googlePlay from "../assets/google-play.png";
 import phoneMockup from "../assets/phone-mockup.png";
 
@@ -42,18 +42,18 @@ const WhyAreWeUnique = () => {
         <div className="promo-text">
           <h2>Memasak Jadi Lebih Mudah & Praktis</h2>
           <p>Jutaan pengguna sudah menikmati pengalaman memasak yang lebih cerdas dengan AutoChef.</p>
-          
-          {/* Pastikan tombol ada di dalam .promo-text */}
-          <div className="app-buttons">
-            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-              <img src={googlePlay} alt="Google Play" className="store-button" />
-            </a>
-          </div>
         </div>
         
         <div className="promo-image">
           <img src={phoneMockup} alt="App Preview" className="phone-mockup" />
         </div>
+      </div>
+
+      {/* Tombol Google Play dipindahkan ke bawah */}
+      <div className="app-download">
+        <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+          <img src={googlePlay} alt="Google Play" className="store-button" />
+        </a>
       </div>
     </section>
   );
