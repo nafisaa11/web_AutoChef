@@ -30,6 +30,7 @@ ul {
   z-index: 1000;
 }
 
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -64,6 +65,10 @@ ul {
 .nav-links {
   display: flex;
   gap: 25px;
+  flex-wrap: nowrap; /* Mencegah menu turun ke bawah */
+  justify-content: flex-end;
+  align-items: center;
+  white-space: nowrap; /* Agar teks tidak terpotong */
 }
 
 .nav-links li a {
@@ -97,19 +102,32 @@ ul {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
+    padding: 0 20px;
   }
 
   .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 10px; /* Kurangi jarak antar menu */
+    font-size: 14px; /* Perkecil font jika perlu */
   }
 }
 
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: row; /* Pastikan tetap dalam satu baris */
+    justify-content: space-between;
+    padding: 0 15px;
+  }
 
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    flex-direction: row; /* Pastikan tetap sejajar */
+  }
 
+  .nav-links li a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}

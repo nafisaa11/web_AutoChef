@@ -149,4 +149,104 @@ body {
   }
 }
 
-/* === Responsiveness === */
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+  }
+
+  .phone {
+    width: 280px;
+  }
+}
+
+/* Untuk layar tablet */
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 5%;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .hero-image {
+    margin-top: 30px;
+  }
+
+  .phone {
+    width: 260px;
+  }
+}
+
+/* Untuk layar HP kecil */
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 30px 5%;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .phone {
+    width: 200px;
+  }
+}
