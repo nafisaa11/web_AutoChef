@@ -1,21 +1,31 @@
 import React from "react";
 import "./Features.css";
-import mockupImage from "../assets/features.png"; // Sesuaikan path dengan lokasi gambar
+import mockupImage from "../assets/features.png";
+
+const featuresLeft = [
+  { title: "Mencari dan Menyimpan Mudah", desc: "Mencari resep lebih mudah dengan fitur favorite" },
+  { title: "Rekomendasi Cerdas", desc: "Dapatkan rekomendasi resep berdasarkan bahan yang Anda miliki dan preferensi rasa." },
+  { title: "Rekomendasi Sesuai Preferensi", desc: "Algoritma rekomandasi berdasarkan favorite dan preferensimu" }
+];
+
+const featuresRight = [
+  { title: "List Bahan Lengkap", desc: "Memberikan list bahan untuk membuat makanan sesuai resep" },
+  { title: "Panduan Memasak Langkah Demi Langkah", desc: "Ikuti instruksi memasak yang jelas dan terperinci untuk hasil terbaik." },
+  { title: "Informasi Nutrisi", desc: "Memberikan informasi mengenai informasi nutrisi makanan" }
+];
 
 const Features = () => {
   return (
     <section id="Features" className="features-section">
-      <h3 className="section-title">FEATURES</h3>
-      <h2 className="features-heading">Awesome Features</h2>
+      <h2 className="features-heading">Kenapa Harus AutoChef?</h2>
 
       <div className="features-container">
         {/* List Fitur Kiri */}
         <div className="features-list">
-          {["Near By Stores", "Near By Stores", "Near By Stores"].map((title, index) => (
+          {featuresLeft.map((feature, index) => (
             <div className="feature-item" key={index}>
-              <span className="feature-dot"></span>
-              <h4>{title}</h4>
-              <p>Discover Local Stores Based On Your GPS Location</p>
+              <h4>{feature.title}</h4>
+              <p>{feature.desc}</p>
             </div>
           ))}
         </div>
@@ -27,11 +37,10 @@ const Features = () => {
 
         {/* List Fitur Kanan */}
         <div className="features-list">
-          {["Near By Stores", "Near By Stores", "Near By Stores"].map((title, index) => (
+          {featuresRight.map((feature, index) => (
             <div className="feature-item" key={index}>
-              <span className="feature-dot"></span>
-              <h4>{title}</h4>
-              <p>Discover Local Stores Based On Your GPS Location</p>
+              <h4>{feature.title}</h4>
+              <p>{feature.desc}</p>
             </div>
           ))}
         </div>

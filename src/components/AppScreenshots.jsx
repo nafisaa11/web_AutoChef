@@ -3,8 +3,7 @@ import "./AppScreenshots.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import { Autoplay, EffectCoverflow } from "swiper/modules";
 
 // Import gambar
 import waveBackground from "../assets/wave-background.png";
@@ -24,20 +23,19 @@ const AppScreenshots = () => {
         backgroundImage: `url(${waveBackground})`,
       }}
     >
-      <h3 className="screenshots-heading">SCREENSHOTS</h3>
-      <h2 className="sub-heading">App Screenshots</h2>
+      <h3 className="screenshots-heading">DISCOVER MORE ABOUT AUTOCHEF</h3>
 
       <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+        modules={[Autoplay, EffectCoverflow]}
         effect="coverflow"
         spaceBetween={20}
         slidesPerView={3}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        speed={800} 
         grabCursor={true}
         centeredSlides={true}
         loop={true}
+        navigation={false} /* Menyembunyikan panah navigasi */
         coverflowEffect={{
           rotate: 10,
           stretch: 0,
