@@ -5,7 +5,6 @@ import "./WhyAreWeUnique.css";
 
 // Import gambar (pastikan path sesuai dengan struktur proyek)
 import googlePlay from "../assets/google-play.png";
-import appStore from "../assets/app-store.png";
 import phoneMockup from "../assets/phone-mockup.png";
 
 const WhyAreWeUnique = () => {
@@ -31,7 +30,6 @@ const WhyAreWeUnique = () => {
           <h3>Tambahkan ke Favorit</h3>
           <p>Simpan resep favorit Anda agar mudah ditemukan dan dimasak kembali kapan saja.</p>
         </div>
-
         <div className="feature">
           <FontAwesomeIcon icon={faClock} className="icon" />
           <h3>Fitur Memasak Pintar</h3>
@@ -44,13 +42,15 @@ const WhyAreWeUnique = () => {
         <div className="promo-text">
           <h2>Memasak Jadi Lebih Mudah & Praktis</h2>
           <p>Jutaan pengguna sudah menikmati pengalaman memasak yang lebih cerdas dengan AutoChef.</p>
+          
+          {/* Pastikan tombol ada di dalam .promo-text */}
           <div className="app-buttons">
             <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
               <img src={googlePlay} alt="Google Play" className="store-button" />
             </a>
-            
           </div>
         </div>
+        
         <div className="promo-image">
           <img src={phoneMockup} alt="App Preview" className="phone-mockup" />
         </div>

@@ -55,3 +55,21 @@
   font-weight: bold;
   color: #ff7f50 !important;
 }
+
+@media (max-width: 768px) {
+  .screenshot-image {
+    max-width: 80%;
+    max-height: 300px;
+  }
+
+  /* Aktifkan pagination di layar kecil */
+  .swiper-pagination {
+    display: block !important;
+  }
+
+  /* Sembunyikan tombol navigasi di layar kecil */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}

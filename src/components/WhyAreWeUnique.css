@@ -3,7 +3,7 @@
   text-align: center;
   padding: 5rem 2rem;
   background: linear-gradient(to bottom, #ff6243, #e63e30);
-  color: white; /* Warna teks utama */
+  color: white;
 }
 
 /* Section Header */
@@ -13,23 +13,16 @@
   text-align: center;
 }
 
-.small-heading {
-  color: #ffe4b5; /* Warna kuning pastel agar kontras */
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .section-title {
   font-size: 2.8rem;
   font-weight: bold;
-  color: white; /* Warna putih agar lebih jelas */
+  color: white;
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
-  color: #f8d7da; /* Abu-abu muda agar tidak terlalu mencolok */
+  color: #f8d7da;
   margin-bottom: 2rem;
 }
 
@@ -65,11 +58,11 @@
 }
 
 .feature h3 {
-  color: #333; /* Warna teks judul fitur agar lebih kontras dengan background putih */
+  color: #333;
 }
 
 .feature p {
-  color: #555; /* Warna teks deskripsi agar mudah dibaca */
+  color: #555;
 }
 
 /* Promo Section */
@@ -84,23 +77,30 @@
 
 .promo-text {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Pastikan konten tersusun dengan baik */
 }
 
 .promo-text h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white; /* Warna putih agar kontras */
+  color: white;
 }
 
 .promo-text p {
-  color: #f8d7da; /* Warna abu-abu terang agar mudah dibaca */
+  color: #f8d7da;
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
 
+/* Perbaikan tombol */
 .app-buttons {
   display: flex;
+  justify-content: start; /* Biarkan tombol tetap sejajar kiri */
+  align-items: center;
   gap: 1rem;
+  margin-top: 2rem; /* Tambahkan margin agar tombol turun */
 }
 
 .store-button {
@@ -133,5 +133,32 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .promo-section {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .promo-text,
+  .promo-image {
+    width: 100%;
+  }
+
+  .promo-text h2 {
+    font-size: 2rem;
+  }
+
+  .phone-mockup {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .app-buttons {
+    justify-content: center; /* Pastikan tombol ada di tengah pada mobile */
   }
 }
