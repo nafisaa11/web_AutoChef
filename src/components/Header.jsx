@@ -1,8 +1,11 @@
 import React from "react";
-import "../index.css"; // Import CSS
+import { useNavigate } from "react-router-dom";
+import "../index.css";
 import logo from "../assets/logo.png";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header className="header">
       <div className="container">
@@ -12,9 +15,24 @@ const Header = () => {
         </div>
         <nav aria-label="Main Navigation">
           <ul className="nav-links">
-            <li><a href="">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#Features">Features</a></li>
             <li><a href="#Download">Download</a></li>
+            <li>
+              <button
+                onClick={() => navigate("/input")}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: "inherit",
+                  font: "inherit",
+                  cursor: "pointer",
+                  padding: 0
+                }}
+              >
+                Try It Now
+              </button>
+            </li>
           </ul>
         </nav>
       </div>

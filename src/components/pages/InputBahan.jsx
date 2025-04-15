@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./InputBahan.css";
+import { Trash2, Plus } from "lucide-react";
+
+const InputBahan = () => {
+  const [bahanList, setBahanList] = useState([""]);
+  const navigate = useNavigate();
+
+  const handleInputChange = (index, value) => {
+    const newList = [...bahanList];
+    newList[index] = value;
+    setBahanList(newList);
+  };
+
+  const handleTambah = () => {
+    setBahanList([...bahanList, ""]);
+  };
+
+  const handleHapus = (index) => {
+    const newList = bahanList.filter((_, i) => i !== index);
+    setBahanList(newList);
+  };
+
+  const handleCariResep = () => {
+    navigate("/rekomendasi");
+  };
+
+  return (
+    <div className="inputbahan-container">
+      <div className="inputbahan-header">
+        <div className="inputbahan-avatar"></div>
+        <div>
+          <p className="inputbahan-greeting">Halo, Guest</p>
+          <p className="inputbahan-subtext">
+            AutoChef siap mecari rekomendasi resep sesuai bahan yang kamu miliki
+          </p>
+        </div>
+      </div>
+
+      <div className="inputbahan-card">
+        <div className="inputbahan-card-header">
+          <h3>Bahan apa yang kamu miliki?</h3>
+          <button className="inputbahan-plus-btn" onClick={handleTambah}>
+            <Plus size={20} />
+          </button>
+        </div>
+        <p className="inputbahan-card-subtext">Tuliskan bahan-bahanmu</p>
+
+        {bahanList.map((item, index) => (
+          <div key={index} className="inputbahan-item">
+            <span className="inputbahan-index">{index + 1}.</span>
+            <input
+              type="text"
+              value={item}
+              placeholder="Masukkan Bahan Makanan"
+              onChange={(e) => handleInputChange(index, e.target.value)}
+            />
+            <button
+              className="inputbahan-delete-btn"
+              onClick={() => handleHapus(index)}
+            >
+              <Trash2 size={18} />
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <button className="inputbahan-search-btn" onClick={handleCariResep}>
+        Cari
+      </button>
+    </div>
+  );
+};
+
+export default InputBahan;
