@@ -28,16 +28,6 @@ const InputBahan = () => {
 
   return (
     <div className="inputbahan-container">
-      <div className="inputbahan-header">
-        <div className="inputbahan-avatar"></div>
-        <div>
-          <p className="inputbahan-greeting">Halo, Guest</p>
-          <p className="inputbahan-subtext">
-            AutoChef siap mecari rekomendasi resep sesuai bahan yang kamu miliki
-          </p>
-        </div>
-      </div>
-
       <div className="inputbahan-card">
         <div className="inputbahan-card-header">
           <h3>Bahan apa yang kamu miliki?</h3>
