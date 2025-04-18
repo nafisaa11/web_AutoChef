@@ -3,6 +3,37 @@
   min-height: 100vh;
 }
 
+/* Bagian header dihapus, jadi ini aman untuk dihapus juga */
+/* 
+.inputbahan-header {
+  display: flex;
+  align-items: center;
+  background-color: #ffc107;
+  border-radius: 20px;
+  padding: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.inputbahan-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.inputbahan-greeting {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.inputbahan-subtext {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+*/
 
 .inputbahan-card {
   background: white;
@@ -74,7 +105,7 @@
 
 .inputbahan-search-btn {
   width: 100%;
-  background: #ffcc00;
+  background: #ffa500;
   color: white;
   padding: 1rem;
   font-weight: bold;
@@ -87,5 +118,5 @@
 }
 
 .inputbahan-search-btn:hover {
-  background: #ff6600;
+  background: #ff9800;
 }
