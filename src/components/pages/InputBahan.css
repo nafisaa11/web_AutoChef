@@ -1,120 +1,122 @@
 .inputbahan-container {
-    padding: 1.5rem;
-    min-height: 100vh;
-  }
-  
-  .inputbahan-header {
-    display: flex;
-    align-items: center;
-    background-color: #ffc107;
-    border-radius: 20px;
-    padding: 1rem;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .inputbahan-avatar {
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-  }
-  
-  .inputbahan-greeting {
-    margin: 0;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .inputbahan-subtext {
-    margin: 0;
-    font-size: 14px;
-    color: #fff;
-  }
-  
-  .inputbahan-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 1rem;
-    margin-bottom: 2rem;
-  }
-  
-  .inputbahan-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .inputbahan-card-subtext {
-    font-size: 14px;
-    color: gray;
-    margin-bottom: 1rem;
-  }
-  
-  .inputbahan-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #fff;
-    padding: 0.75rem 1rem;
-    border-radius: 15px;
-    margin-bottom: 0.75rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eee;
-  }
-  
-  .inputbahan-index {
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .inputbahan-item input {
-    flex: 1;
-    padding: 0.5rem 0;
-    border: none;
-    background: transparent;
-    font-size: 16px;
-  }
-  
-  .inputbahan-item input:focus {
-    outline: none;
-  }
-  
-  .inputbahan-item input::placeholder {
-    color: #aaa;
-  }
-  
-  .inputbahan-delete-btn {
-    background: transparent;
-    border: none;
-    color: #dc3545;
-    cursor: pointer;
-  }
-  
-  .inputbahan-plus-btn {
-    background: #eee;
-    border: none;
-    border-radius: 50%;
-    padding: 0.4rem;
-    cursor: pointer;
-  }
-  
-  .inputbahan-search-btn {
-    width: 100%;
-    background: #ffa500;
-    color: white;
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
-    transition: background 0.3s;
-  }
-  
-  .inputbahan-search-btn:hover {
-    background: #ff9800;
-  }
-  
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+/* Bagian header dihapus, jadi ini aman untuk dihapus juga */
+/* 
+.inputbahan-header {
+  display: flex;
+  align-items: center;
+  background-color: #ffc107;
+  border-radius: 20px;
+  padding: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.inputbahan-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.inputbahan-greeting {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.inputbahan-subtext {
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+}
+*/
+
+.inputbahan-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.inputbahan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputbahan-card-subtext {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+.inputbahan-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 15px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+}
+
+.inputbahan-index {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.inputbahan-item input {
+  flex: 1;
+  padding: 0.5rem 0;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.inputbahan-item input:focus {
+  outline: none;
+}
+
+.inputbahan-item input::placeholder {
+  color: #aaa;
+}
+
+.inputbahan-delete-btn {
+  background: transparent;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.inputbahan-plus-btn {
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.inputbahan-search-btn {
+  width: 100%;
+  background: #ffa500;
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.4);
+  transition: background 0.3s;
+}
+
+.inputbahan-search-btn:hover {
+  background: #ff9800;
+}

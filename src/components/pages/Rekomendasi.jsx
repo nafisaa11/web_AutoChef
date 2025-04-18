@@ -37,11 +37,6 @@ const resepList = [
 const RekomendasiResep = () => {
   return (
     <div className="rekomendasi-container">
-      <div className="welcome-banner">
-        <h2>Halo, Guest</h2>
-        <p>Ini adalah rekomendasi resep sesuai dengan bahanmu</p>
-      </div>
-
       <h3 className="judul-section">Rekomendasi</h3>
 
       <div className="resep-list">
@@ -50,7 +45,7 @@ const RekomendasiResep = () => {
             <img src={resep.gambar} alt={resep.judul} className="rekomendasi-thumbnail" />
             <div className="rekomendasi-detail">
               <h4>{resep.judul}</h4>
-              <p>Bahan: {resep.bahan}</p>
+              <p>{resep.bahan}</p>
             </div>
           </div>
         ))}
