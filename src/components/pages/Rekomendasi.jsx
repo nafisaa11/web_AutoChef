@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ← Tambahkan ini
 import "./Rekomendasi.css";
 
 const resepList = [
@@ -35,14 +36,29 @@ const resepList = [
 ];
 
 const RekomendasiResep = () => {
+  const navigate = useNavigate(); // ← Gunakan navigate dari router
+
+  const handleClick = (id) => {
+    navigate(`/detail/${id}`); // ← Pindah ke halaman detail berdasarkan id
+  };
+
   return (
     <div className="rekomendasi-container">
       <h3 className="judul-section">Rekomendasi</h3>
 
       <div className="resep-list">
         {resepList.map((resep) => (
-          <div className="rekomendasi-card" key={resep.id}>
-            <img src={resep.gambar} alt={resep.judul} className="rekomendasi-thumbnail" />
+          <div
+            className="rekomendasi-card"
+            key={resep.id}
+            onClick={() => handleClick(resep.id)} // ← Tambahkan interaksi klik
+            style={{ cursor: "pointer" }} // ← Biar user tahu bisa diklik
+          >
+            <img
+              src={resep.gambar}
+              alt={resep.judul}
+              className="rekomendasi-thumbnail"
+            />
             <div className="rekomendasi-detail">
               <h4>{resep.judul}</h4>
               <p>{resep.bahan}</p>
