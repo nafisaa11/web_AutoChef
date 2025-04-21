@@ -32,10 +32,11 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/input" element={<InputBahan />} />
         <Route path="/rekomendasi" element={<Rekomendasi />} />
-        <Route path="/detail" element={<DetailBahan />} />
+        <Route path="/detail/:id" element={<DetailBahan />} /> {/* ← ini diperbaiki */}
       </Routes>
     </Router>
   );
 }
+
 
 export default App;
