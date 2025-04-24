@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 import logo from "../assets/logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header className="header">
@@ -13,22 +16,20 @@ const Header = () => {
           <img src={logo} alt="AutoChef Logo" className="logo-img" />
           <h1 className="logo-text">AutoChef</h1>
         </div>
-        <nav aria-label="Main Navigation">
-          <ul className="nav-links">
+
+        <button className="hamburger" onClick={toggleMenu} aria-label="Menu">
+          ☰
+        </button>
+
+        <nav className={`nav-links ${menuOpen ? "show" : ""}`} aria-label="Main Navigation">
+          <ul>
             <li><a href="/">Home</a></li>
             <li><a href="#Features">Features</a></li>
             <li><a href="#Download">Download</a></li>
             <li>
               <button
                 onClick={() => navigate("/input")}
-                style={{
-                  background: "none",
-                  border: "none",
-                  color: "inherit",
-                  font: "inherit",
-                  cursor: "pointer",
-                  padding: 0
-                }}
+                className="try-button"
               >
                 Try It Now
               </button>

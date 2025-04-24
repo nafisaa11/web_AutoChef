@@ -65,10 +65,16 @@ ul {
 .nav-links {
   display: flex;
   gap: 25px;
-  flex-wrap: nowrap; /* Mencegah menu turun ke bawah */
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
-  white-space: nowrap; /* Agar teks tidak terpotong */
+  white-space: nowrap;
+}
+
+.nav-links ul {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
 }
 
 .nav-links li a {
@@ -101,39 +107,77 @@ ul {
   color: #ff5722;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .header {
-    display: none; /* Navbar akan tersembunyi di mobile */
-  }
+/* Button (Try It Now) */
+.try-button {
+  background-color: rgb(255, 87, 34);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 11px;
+  cursor: pointer;
+  font: inherit;
 }
 
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* === Responsive Design === */
 @media screen and (max-width: 768px) {
-  .container {
-    padding: 0 20px;
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
-    gap: 10px; /* Kurangi jarak antar menu */
-    font-size: 14px; /* Perkecil font jika perlu */
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: block;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links li a {
+    font-size: 15px;
+  }
+
+  .try-button {
+    width: 100%;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 480px) {
   .container {
-    flex-direction: row; /* Pastikan tetap dalam satu baris */
+    flex-direction: row;
     justify-content: space-between;
     padding: 0 15px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 8px;
-    flex-direction: row; /* Pastikan tetap sejajar */
   }
 
   .nav-links li a {
     font-size: 13px;
     padding: 5px 10px;
+  }
+
+  .nav-links ul {
+    gap: 10px;
   }
 }
