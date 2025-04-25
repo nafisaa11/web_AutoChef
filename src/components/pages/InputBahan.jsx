@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./InputBahan.css";
 import { Trash2, Plus } from "lucide-react";
 
@@ -22,8 +23,17 @@ const InputBahan = () => {
     setBahanList(newList);
   };
 
-  const handleCariResep = () => {
-    navigate("/rekomendasi");
+  const handleCariResep = async () => {
+    const query = bahanList.filter(Boolean).join(",");
+    try {
+      const response = await axios.get(
+        `http://156.67.214.60/api/resepmakanan?bahan=${encodeURIComponent(query)}`
+      );
+      const dataResep = response.data.data;
+      navigate("/rekomendasi", { state: { hasil: dataResep } });
+    } catch (error) {
+      console.error("Gagal mengambil data resep:", error);
+    }
   };
 
   return (

@@ -1,43 +1,70 @@
 .detail-container {
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  }
-  
-  .detail-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.2rem;
-    text-align: center;
-    color: #2c3e50;
-  }
-  
-  .detail-image {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
-  }
-  
-  .detail-bahan {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    padding: 1.2rem;
-    border-radius: 12px;
-    white-space: pre-wrap;
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
-  }
-  
-  .not-found {
-    text-align: center;
-    margin-top: 3rem;
-    font-size: 1.2rem;
-    color: #999;
-  }
-  
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #34495e;
+}
+
+.detail-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.detail-image:hover {
+  transform: scale(1.02);
+}
+
+.detail-section {
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 0.5rem;
+}
+
+.detail-bahan,
+.detail-steps {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  background-color: #fdfdfd;
+  padding: 1.3rem 1.5rem;
+  border-left: 5px solid #3498db;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.3s ease;
+}
+
+.detail-bahan:hover,
+.detail-steps:hover {
+  background-color: #f4faff;
+}
+
+.not-found {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #999;
+}

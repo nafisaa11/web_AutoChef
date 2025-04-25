@@ -1,45 +1,39 @@
-import React from "react";
-import { useNavigate } from "react-router-dom"; // ← Tambahkan ini
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Rekomendasi.css";
 
-const resepList = [
-  {
-    id: 1,
-    gambar: "https://img-global.cpcdn.com/recipes/3b260f5b94c1be6d/680x482cq70/ayam-woku-manado-foto-resep-utama.webp",
-    judul: "Ayam Woku Manado",
-    bahan: "1 Ekor Ayam Kampung (potong sesuai selera)...",
-  },
-  {
-    id: 2,
-    gambar: "https://img-global.cpcdn.com/recipes/4a3f09e8dd2ef7b0/680x482cq70/ayam-goreng-tulang-lunak-foto-resep-utama.webp",
-    judul: "Ayam goreng tulang lunak",
-    bahan: "1 kg ayam (dipotong sesuai selera)...",
-  },
-  {
-    id: 3,
-    gambar: "https://img-global.cpcdn.com/recipes/961f482b70c6944d/680x482cq70/ayam-cabai-foto-resep-utama.webp",
-    judul: "Ayam cabai",
-    bahan: "1/4 kg ayam, 3 buah cabai merah...",
-  },
-  {
-    id: 4,
-    gambar: "https://img-global.cpcdn.com/recipes/4aa9c960f233325a/680x482cq70/ayam-geprek-foto-resep-utama.webp",
-    judul: "Ayam Geprek",
-    bahan: "250 gr daging ayam (saya pakai dada)...",
-  },
-  {
-    id: 5,
-    gambar: "https://img-global.cpcdn.com/recipes/71f36167c652bfe4/680x482cq70/minyak-ayam-foto-resep-utama.webp",
-    judul: "Minyak Ayam",
-    bahan: "Kulit ayam, bawang putih, dan minyak goreng...",
-  },
-];
-
 const RekomendasiResep = () => {
-  const navigate = useNavigate(); // ← Gunakan navigate dari router
+  const location = useLocation();
+  const hasil = location.state?.hasil || [];
+  const navigate = useNavigate();
 
-  const handleClick = (id) => {
-    navigate(`/detail/${id}`); // ← Pindah ke halaman detail berdasarkan id
+  // State untuk pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
+
+  // untuk menghitung total halaman
+  const totalPages = Math.ceil(hasil.length / itemsPerPage);
+
+  // untuk menentukan data resep yang ditampilkan
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = hasil.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handleClick = (resep) => {
+    navigate(`/detail/${resep.id}`, { state: { resep } });
+  };
+
+  const truncateText = (text, maxLength) => {
+    if (!text) return "";
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
+
+  const goToPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" }); 
   };
 
   return (
@@ -47,25 +41,46 @@ const RekomendasiResep = () => {
       <h3 className="judul-section">Rekomendasi</h3>
 
       <div className="resep-list">
-        {resepList.map((resep) => (
-          <div
-            className="rekomendasi-card"
-            key={resep.id}
-            onClick={() => handleClick(resep.id)} // ← Tambahkan interaksi klik
-            style={{ cursor: "pointer" }} // ← Biar user tahu bisa diklik
-          >
-            <img
-              src={resep.gambar}
-              alt={resep.judul}
-              className="rekomendasi-thumbnail"
-            />
-            <div className="rekomendasi-detail">
-              <h4>{resep.judul}</h4>
-              <p>{resep.bahan}</p>
+        {currentItems.length === 0 ? (
+          <p className="no-data">Tidak ada resep ditemukan.</p>
+        ) : (
+          currentItems.map((resep) => (
+            <div
+              className="rekomendasi-card"
+              key={resep.id}
+              onClick={() => handleClick(resep)}
+              style={{ cursor: "pointer" }}
+            >
+              <img
+                src={resep.gambar}
+                alt={resep.nama_resep}
+                className="rekomendasi-thumbnail"
+              />
+              <div className="rekomendasi-detail">
+                <h4>{resep.nama_resep}</h4>
+                <p>{truncateText(resep.bahan, 50)}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
+
+      {/* kode untuk paginationnya */}
+      {totalPages > 1 && (
+        <div className="pagination">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
+            <button
+              key={number}
+              className={`pagination-btn ${
+                currentPage === number ? "active" : ""
+              }`}
+              onClick={() => goToPage(number)}
+            >
+              {number}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

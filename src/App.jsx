@@ -32,7 +32,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/input" element={<InputBahan />} />
         <Route path="/rekomendasi" element={<Rekomendasi />} />
-        <Route path="/detail/:id" element={<DetailBahan />} /> {/* ← ini diperbaiki */}
+        <Route path="/detail/:id" element={<DetailBahan />} /> 
       </Routes>
     </Router>
   );
