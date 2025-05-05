@@ -181,3 +181,8 @@ ul {
     gap: 10px;
   }
 }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

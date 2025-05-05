@@ -9,6 +9,20 @@ const Header = () => {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  // Fungsi smooth scroll yang sangat sederhana
+  const smoothScroll = (e, sectionId) => {
+    e.preventDefault();
+    if (window.location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -23,14 +37,14 @@ const Header = () => {
 
         <nav className={`nav-links ${menuOpen ? "show" : ""}`} aria-label="Main Navigation">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Features</a></li>
-            <li><a href="/">Download</a></li>
+            <li><a href="/" onClick={(e) => smoothScroll(e, 'home')}>Home</a></li>
+            <li><a href="#Features" onClick={(e) => smoothScroll(e, 'Features')}>Features</a></li>
+            <li><a href="#Download" onClick={(e) => smoothScroll(e, 'Download')}>Download</a></li>
             <li>
               <button
                 onClick={() => navigate("/input")}
                 className="try-button"
-                style={{ display: "none" }} 
+                style={{ display: "none" }}
               >
                 Try It Now
               </button>
