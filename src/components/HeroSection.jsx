@@ -1,16 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import "./HeroSection.css";
-import phoneImage from "../assets/phone.png";
+import phoneImage from "../assets/phone.png"; // Sesuaikan path
 
 const HeroSection = () => {
-  const heroRef = useRef();
-
-  useEffect(() => {
-    heroRef.current.id = "home";
-  }, []);
-
   return (
-    <section className="hero" ref={heroRef}>
+    <section className="hero">
       <div className="hero-content">
         <h1 className="hero-title">
           <span className="highlight">Auto</span>Chef
