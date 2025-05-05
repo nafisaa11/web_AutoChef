@@ -24,12 +24,13 @@ const Header = () => {
         <nav className={`nav-links ${menuOpen ? "show" : ""}`} aria-label="Main Navigation">
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="#Features">Features</a></li>
-            <li><a href="#Download">Download</a></li>
+            <li><a href="/">Features</a></li>
+            <li><a href="/">Download</a></li>
             <li>
               <button
                 onClick={() => navigate("/input")}
                 className="try-button"
+                style={{ display: "none" }} 
               >
                 Try It Now
               </button>
