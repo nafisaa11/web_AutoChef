@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { List, X } from "lucide-react";
 import "../index.css";
 import logo from "../assets/logo.png";
 
@@ -11,37 +12,50 @@ const Header = () => {
   
   const closeMenu = () => setMenuOpen(false);
 
+  // Fungsi smooth scroll yang sangat sederhana
+  const smoothScroll = (e, sectionId) => {
+    e.preventDefault();
+    if (window.location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+    setMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
+        {/* LOGO */}
         <div className="logo-container">
           <img src={logo} alt="AutoChef Logo" className="logo-img" />
           <h1 className="logo-text">AutoChef</h1>
         </div>
         
+        {/* HAMBURGER BUTTON - dengan icon Phosphor */}
         <button 
           className={`hamburger ${menuOpen ? "active" : ""}`} 
           onClick={toggleMenu} 
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          {menuOpen ? (
+            <X size={32} color="#ff6b1a" />
+          ) : (
+            <List size={32} color="#ff6b1a" />
+          )}
         </button>
         
+        {/* NAVIGATION - responsive via CSS */}
         <nav className={`nav-links ${menuOpen ? "show" : ""}`} aria-label="Main Navigation">
           <ul>
-            <li>
-              <a href="/" onClick={closeMenu}>Home</a>
-            </li>
-            <li>
-              <a href="#features" onClick={closeMenu}>Features</a>
-            </li>
-            <li>
-              <a href="#download" onClick={closeMenu}>Download</a>
-            </li>
-            <li>
+            <li><a href="/" onClick={(e) => smoothScroll(e, 'home')}>Home</a></li>
+            <li><a href="#Features" onClick={(e) => smoothScroll(e, 'Features')}>Features</a></li>
+            <li><a href="#Download" onClick={(e) => smoothScroll(e, 'Download')}>Download</a></li>
+            {/* <li>
               <button
                 onClick={() => {
                   navigate("/input");
@@ -51,7 +65,7 @@ const Header = () => {
               >
                 Try It Now
               </button>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
