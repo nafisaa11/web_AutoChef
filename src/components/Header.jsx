@@ -6,8 +6,10 @@ import logo from "../assets/logo.png";
 const Header = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-
+  
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="header">
@@ -16,19 +18,35 @@ const Header = () => {
           <img src={logo} alt="AutoChef Logo" className="logo-img" />
           <h1 className="logo-text">AutoChef</h1>
         </div>
-
-        <button className="hamburger" onClick={toggleMenu} aria-label="Menu">
-          ☰
+        
+        <button 
+          className={`hamburger ${menuOpen ? "active" : ""}`} 
+          onClick={toggleMenu} 
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
-
+        
         <nav className={`nav-links ${menuOpen ? "show" : ""}`} aria-label="Main Navigation">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#Features">Features</a></li>
-            <li><a href="#Download">Download</a></li>
+            <li>
+              <a href="/" onClick={closeMenu}>Home</a>
+            </li>
+            <li>
+              <a href="#features" onClick={closeMenu}>Features</a>
+            </li>
+            <li>
+              <a href="#download" onClick={closeMenu}>Download</a>
+            </li>
             <li>
               <button
-                onClick={() => navigate("/input")}
+                onClick={() => {
+                  navigate("/input");
+                  closeMenu();
+                }}
                 className="try-button"
               >
                 Try It Now
