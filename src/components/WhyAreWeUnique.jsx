@@ -42,18 +42,16 @@ const WhyAreWeUnique = () => {
         <div className="promo-text">
           <h2>Memasak Jadi Lebih Mudah & Praktis</h2>
           <p>Jutaan pengguna sudah menikmati pengalaman memasak yang lebih cerdas dengan AutoChef.</p>
+          <div className="app-download">
+            <a href="https://play.google.com/store/apps/details?id=com.autochef.app" target="_blank" rel="noopener noreferrer">
+              <img src={googlePlay} alt="Google Play" className="store-button" />
+            </a>
+          </div>
         </div>
-        
+
         <div className="promo-image">
           <img src={phoneMockup} alt="App Preview" className="phone-mockup" />
         </div>
-      </div>
-
-      {/* Tombol Google Play dipindahkan ke bawah */}
-      <div className="app-download">
-        <a href="https://play.google.com/store/apps/details?id=com.autochef.app" target="_blank" rel="noopener noreferrer">
-          <img src={googlePlay} alt="Google Play" className="store-button" />
-        </a>
       </div>
     </section>
   );

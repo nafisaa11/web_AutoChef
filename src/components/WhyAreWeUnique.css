@@ -103,20 +103,32 @@
   animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Tombol Google Play */
+/* App Download - Updated Styles */
 .app-download {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem; /* Tambahkan jarak dari elemen sebelumnya */
+  margin-top: 30px;
+  text-align: left; /* Sejajar dengan teks lainnya */
+}
+
+.app-download a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.app-download a:hover {
+  transform: scale(1.05);
 }
 
 .store-button {
-  width: 180px;
+  height: 70px; /* Ukuran lebih besar */
+  width: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
 
 .store-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Animations */
@@ -155,6 +167,11 @@
 
   .app-download {
     margin-top: 2rem;
+    text-align: center; /* Center di mobile untuk better UX */
+  }
+
+  .store-button {
+    height: 60px; /* Sedikit lebih kecil di mobile */
   }
 }
 
