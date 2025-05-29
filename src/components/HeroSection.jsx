@@ -4,7 +4,7 @@ import phoneImage from "../assets/phone.png"; // Sesuaikan path
 
 const HeroSection = () => {
   return (
-    <section className="hero">
+    <section id="HeroSection" className="hero">
       <div className="hero-content">
         <h1 className="hero-title">
           <span className="highlight">Auto</span>Chef

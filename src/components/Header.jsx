@@ -13,18 +13,20 @@ const Header = () => {
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
-  // Fungsi smooth scroll untuk desktop
-  const smoothScroll = (e, sectionId) => {
-    e.preventDefault();
-    if (window.location.pathname === "/") {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
-    }
-  };
+// Ganti fungsi smoothScroll jadi ini:
+const smoothScroll = (e, sectionId) => {
+  e.preventDefault();
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const headerHeight = 80; // Sesuaikan dengan tinggi header Anda
+    const elementPosition = element.offsetTop - headerHeight;
+    
+    window.scrollTo({
+      top: elementPosition,
+      behavior: 'smooth'
+    });
+  }
+};
 
   return (
     <>
@@ -49,7 +51,7 @@ const Header = () => {
           {/* NAVIGATION DESKTOP - hidden di mobile */}
           <nav className="nav-links-desktop" aria-label="Main Navigation">
             <ul>
-              <li><a href="#HeroSection" onClick={(e) => smoothScroll(e, 'home')}>Home</a></li>
+              <li><a href="#HeroSection" onClick={(e) => smoothScroll(e, 'HeroSection')}>Home</a></li>
               <li><a href="#Features" onClick={(e) => smoothScroll(e, 'Features')}>Features</a></li>
               <li><a href="#Download" onClick={(e) => smoothScroll(e, 'Download')}>Download</a></li>
               {/* <li>
